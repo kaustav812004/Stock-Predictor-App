@@ -12,7 +12,7 @@ model = load_model("Stock Prediction using LSTM.keras")
 st.header('Stock Prediction Predictor')
 
 stock = st.text_input("Enter Stock Symbol", 'GOOG')
-start = st.text_input("Enter start_date", '1995-01-01')
+start = st.text_input("Enter start_date", '2015-01-01')
 end = st.text_input("Enter end date", '2025-10-20')
 
 data = yf.download(stock, start, end)
@@ -75,4 +75,5 @@ plt.plot(predict, 'r', label = 'Predicted Price')
 plt.plot(y, 'g', label='Original Price')
 plt.xlabel('Time')
 plt.ylabel('Price')
+
 st.pyplot(fig4)
